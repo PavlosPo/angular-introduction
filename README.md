@@ -1,5 +1,13 @@
 # Εισαγωγή στo Angular Framework
 
+## 4. `*ngFor` directive
+
+- Στα templates μπορούμε να επαναλάβουμε την εμφάνιση οποιουδήποτε HTML tag που μπορεί να είναι και component selector με τη χρήση του directive `*ngFor`:
+  ```html
+  <app-person-alt *ngFor="let user of users" [person]="user"></app-person-alt>
+  ```
+- Διατρέχει τον πίνακα `users` και σε κάθε επανάληψη η μεταβλητή `user` περιέχει το τρέχον αντικείμενο που περνά σαν input στην κλάση `PersonAltComponent`.
+
 ## 3. Alternate component input - `*ngIf` directive
 
 - Η αρχικοποίηση ενός input σε ένα componnent γίνεται συνήθως με τον τύπο `<Τype>|undefined` (αν περαστούν δεδομένα θα έχουν τον τύπο τους αλλιώς το input είναι `undefined`).
