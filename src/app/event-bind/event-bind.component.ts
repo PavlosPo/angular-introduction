@@ -10,5 +10,19 @@ import { CommonModule } from '@angular/common';
 })
 export class EventBindComponent {
   times = 0;
+  userInput = '';
+
+  increaseCounter() {
+    this.times += 1;
+  }
+
+  resetCounter() {
+    this.times = 0;
+  }
+
+  onUserInput(event: Event) {
+    const target = event.target as HTMLInputElement // casting to HTML Element
+    this.userInput = target.value;
+  }
 
 }

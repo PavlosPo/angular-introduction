@@ -1,5 +1,35 @@
 # Εισαγωγή στo Angular Framework
 
+## 5. Event Binding (data flow από το template προς τον controller)
+
+> Εγκατάσταση του Bootstrap στην εφαρμογή μας:
+> ```
+> npm i bootstrap
+> ```
+> Στη συνέχεια προσθέτουμε στο αρχείο `angular.json` στο block `projects > angular-introduction > architect > build > options`:
+> ```json
+> ...
+> "styles": [
+>              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+>              "src/styles.css"
+>            ],
+>            "scripts": [
+>              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+>            ]
+> ...
+> ```
+
+- Για κάθε event που μπορεί να συμβεί στο template έχουμε τη δυνατότητα να δεσμεύσουμε σε αυτό μια μέθοδο της κλάσης του component. Τα events δεσμεύονται αν περικλείσουμε το όνομά τους σε παρενθέσεις, π.χ. `(click)="onClick()"`. Οι μέθοδοι που δεσμεύονται με τα events λέγονται _envent handlers_.
+- Στα κουμπιά του template μπορούμε μπορούμε να δεσμεύσουμε τον ίδιο ή διαφορετικούς click handlers.
+- Χρήση του `(input)="onInput($event)"` στην περίπτωση που πρέπει να μεταφέρουμε πίσω στον controller τα δεδομένα που πληκτρολόγησε ο χρήστης (περνά πίσω στον input handler to πλήρες event). Για να εξάγουμε τα δεδομένα στον controller:
+  ```typescript
+  onUserInput(event: Event) {
+    const target = event.target as HTMLInputElement;
+    this.userInput = target.value;
+  }
+  ```
+- To `userInput` μπορεί να περνά πίσω στο template με χρήση one way bind `{{ userInput }}` και με αυτόν το τρόπο υλοποιείται **two way bind**: data από το template περνούν πίσω στον controller και αυτόματα ξανά πίσω στο template.
+
 ## 4. `*ngFor` directive
 
 - Στα templates μπορούμε να επαναλάβουμε την εμφάνιση οποιουδήποτε HTML tag που μπορεί να είναι και component selector με τη χρήση του directive `*ngFor`:
@@ -137,3 +167,4 @@ CREATE angular-introduction/src/assets/.gitkeep (0 bytes)
 ✔ Packages installed successfully.
     Successfully initialized git.
 ```
+
