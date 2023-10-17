@@ -4,11 +4,17 @@ import { PersonComponent } from './person/person.component';
 import { Person } from './interfaces/person';
 import { PersonAltComponent } from './person-alt/person-alt.component';
 import { EventBindComponent } from './event-bind/event-bind.component';
+import { OutputDemoComponent } from './output-demo/output-demo.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, PersonComponent, PersonAltComponent, EventBindComponent],
+  imports: [
+    CommonModule, 
+    PersonComponent,
+    PersonAltComponent,
+    EventBindComponent,
+    OutputDemoComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -103,5 +109,13 @@ export class AppComponent {
       email: 'june.davis@example.com',
       address: '654 Pine St',
     },
-  ]
+  ];
+
+  onDeleteUser(i: number) {
+    this.users.splice(i,1)
+  }
+
+  onSendUser(user: Person) {
+    console.log(user)
+  }
 }

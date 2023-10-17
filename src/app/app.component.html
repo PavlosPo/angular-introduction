@@ -11,4 +11,13 @@
 
 <app-person-alt *ngFor="let user of users" [person] = 'user'></app-person-alt> -->
 
-<app-event-bind></app-event-bind>
+<!-- <app-event-bind></app-event-bind> -->
+
+<!-- "users" is the data that the app.component has already
+userData are the Input() function data of the 'app-output-demo' component needs -->
+
+<app-output-demo 
+  [userData]="users" 
+  (deleteUser)="onDeleteUser($event)"
+  (sendUser)="onSendUser($event)">
+</app-output-demo>
