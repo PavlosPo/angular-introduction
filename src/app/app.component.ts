@@ -5,6 +5,7 @@ import { Person } from './interfaces/person';
 import { PersonAltComponent } from './person-alt/person-alt.component';
 import { EventBindComponent } from './event-bind/event-bind.component';
 import { OutputDemoComponent } from './output-demo/output-demo.component';
+import { PersonCardComponent } from './person-card/person-card.component';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ import { OutputDemoComponent } from './output-demo/output-demo.component';
     PersonComponent,
     PersonAltComponent,
     EventBindComponent,
-    OutputDemoComponent],
+    OutputDemoComponent,
+    PersonCardComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -40,6 +42,7 @@ export class AppComponent {
 
   users: Person[] = [
     {
+      photoUrl: 'https://i.pravatar.cc/?img=1',
       givenName: 'John',
       surName: 'Doe',
       age: 30,
@@ -47,6 +50,7 @@ export class AppComponent {
       address: '123 Main St',
     },
     {
+      photoUrl: 'https://i.pravatar.cc/?img=2',
       givenName: 'Jane',
       surName: 'Doe',
       age: 28,
@@ -54,6 +58,7 @@ export class AppComponent {
       address: '123 Main St',
     },
     {
+      photoUrl: 'https://i.pravatar.cc/?img=3',
       givenName: 'Jim',
       surName: 'Brown',
       age: 45,
@@ -61,6 +66,7 @@ export class AppComponent {
       address: '456 Park Ave',
     },
     {
+      photoUrl: 'https://i.pravatar.cc/?img=4',
       givenName: 'Jill',
       surName: 'Brown',
       age: 42,
@@ -68,6 +74,7 @@ export class AppComponent {
       address: '456 Park Ave',
     },
     {
+      photoUrl: 'https://i.pravatar.cc/?img=5',
       givenName: 'Jake',
       surName: 'Smith',
       age: 36,
@@ -75,6 +82,7 @@ export class AppComponent {
       address: '789 Broadway',
     },
     {
+      photoUrl: 'https://i.pravatar.cc/?img=6',
       givenName: 'Judy',
       surName: 'Smith',
       age: 34,
@@ -82,6 +90,7 @@ export class AppComponent {
       address: '789 Broadway',
     },
     {
+      photoUrl: 'https://i.pravatar.cc/?img=7',
       givenName: 'Jack',
       surName: 'Johnson',
       age: 50,
@@ -89,6 +98,7 @@ export class AppComponent {
       address: '321 Oak St',
     },
     {
+      photoUrl: 'https://i.pravatar.cc/?img=8',
       givenName: 'Julie',
       surName: 'Johnson',
       age: 48,
@@ -96,6 +106,7 @@ export class AppComponent {
       address: '321 Oak St',
     },
     {
+      photoUrl: 'https://i.pravatar.cc/?img=9',
       givenName: 'Jerry',
       surName: 'Davis',
       age: 55,
@@ -103,6 +114,7 @@ export class AppComponent {
       address: '654 Pine St',
     },
     {
+      photoUrl: 'https://i.pravatar.cc/?img=10',
       givenName: 'June',
       surName: 'Davis',
       age: 53,
@@ -111,11 +123,14 @@ export class AppComponent {
     },
   ];
 
+  sentUser: Person | undefined;
+
   onDeleteUser(i: number) {
     this.users.splice(i,1)
   }
 
   onSendUser(user: Person) {
     console.log(user)
+    this.sentUser = user;
   }
 }
