@@ -34,7 +34,7 @@ userData are the Input() function data of the 'app-output-demo' component needs 
 </div> -->
 
 
-<div class="container d-flex flex-column gap-2">
+<!-- <div class="container d-flex flex-column gap-2">
   <app-reactive-form (person)="onNewPerson($event)"></app-reactive-form>
   <app-output-demo 
   [userData]="users" 
@@ -42,6 +42,10 @@ userData are the Input() function data of the 'app-output-demo' component needs 
   (sendUser)="onSendUser($event)">
   </app-output-demo>
   <app-person-card [person]="sentUser"></app-person-card>
+</div> -->
+
+<div class="container gap-2">
+  <app-crud-demo></app-crud-demo>
 </div>
 
 
