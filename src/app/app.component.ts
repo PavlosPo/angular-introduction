@@ -32,21 +32,21 @@ export class AppComponent implements OnInit{
   name = "Pavlos";
   lastname: string = "Poulos";
 
-  person: Person = { 
-    givenName: 'Pavlos',
-    surName: 'Poulos',
-    age: 23,
-    email: 'pav.poulos@aueb.gr',
-    address: 'Athens, Greece'
-  }
+  // person: Person = { 
+  //   givenName: 'Pavlos',
+  //   surName: 'Poulos',
+  //   age: 23,
+  //   email: 'pav.poulos@aueb.gr',
+  //   address: 'Athens, Greece'
+  // }
 
-  person2: Person = { 
-    givenName: 'Giwrgos',
-    surName: 'Chatz',
-    age: 22,
-    email: 'george.poulos@aueb.gr',
-    address: 'Athens, Greece'
-  };
+  // person2: Person = { 
+  //   givenName: 'Giwrgos',
+  //   surName: 'Chatz',
+  //   age: 22,
+  //   email: 'george.poulos@aueb.gr',
+  //   address: 'Athens, Greece'
+  // };
   
   users : Person[] = [];
   sentUser: Person | undefined;
