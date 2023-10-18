@@ -7,6 +7,7 @@ import { EventBindComponent } from './event-bind/event-bind.component';
 import { OutputDemoComponent } from './output-demo/output-demo.component';
 import { PersonCardComponent } from './person-card/person-card.component';
 import { TemplateDrivenDormComponent } from './template-driven-dorm/template-driven-dorm.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,8 @@ import { TemplateDrivenDormComponent } from './template-driven-dorm/template-dri
     EventBindComponent,
     OutputDemoComponent,
     PersonCardComponent,
-    TemplateDrivenDormComponent],
+    TemplateDrivenDormComponent,
+    ReactiveFormComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
