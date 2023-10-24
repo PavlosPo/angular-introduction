@@ -11,15 +11,16 @@ import { Person } from 'src/app/interfaces/person';
   styleUrls: ['./list-users.component.css']
 })
 export class ListUsersComponent implements OnInit {
+  users: Person[] = [];
 
-users: Person[] = [];
+  constructor(private service: AppService = Inject(AppService)) {}
 
-constructor(private service: AppService = Inject(AppService)) {}
-
-ngOnInit(): void {
-  this.service.getAllUsers().subscribe(users => {
-    this.users = users
-  })
+  ngOnInit(): void {
+    // after getting the method getAllUsers, we .subscribe() on them
+    // to actually run the Http GET command on getAllUsers.
+    this.service.getAllUsers().subscribe(users => {
+      this.users = users
+    })
 }
 
 

@@ -7,8 +7,11 @@ import { Person } from './interfaces/person';
 })
 export class AppService {
 
+  // inject of HttpClient to the app service component
   constructor(private http: HttpClient = inject(HttpClient)) { }
 
+  // this will be used outside of the app.component, 
+  // again with the inject method
   getAllUsers() {
     return this.http.get<Person[]>('http://localhost:3000/users');
   }
