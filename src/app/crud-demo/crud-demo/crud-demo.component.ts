@@ -26,4 +26,9 @@ export class CrudDemoComponent {
   onSelection(operation: string) {
     this.crudOperation = operation;
   }
+
+  listUsers() { 
+    // this will rewire to 'list Users component' with *ngIf in the html file
+    this.crudOperation = 'list'
+  }
 }
