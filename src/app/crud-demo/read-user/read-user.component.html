@@ -1,1 +1,15 @@
-<p>read-user works!</p>
+<div class="d-felx flex-column gap-2">
+<div class="form-group">
+  <label class="form-label">
+    Search for User Id
+  </label>
+  <input type="number" class="form-control" #userId>
+  <div *ngIf="userNotFound" class="text-danger">
+    User Id not found!
+  </div>
+  <button class="btn btn-primary mt-2" (click)="onClick()">
+    Search
+  </button>
+</div>
+<app-person-card *ngIf="foundUser" [person]="foundUser"></app-person-card>
+</div>

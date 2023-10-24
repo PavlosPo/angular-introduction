@@ -1,8 +1,12 @@
 # Εισαγωγή στo Angular Framework
 
+## 12. CRUD users: Read Users
+
 ## 11. CRUD List Users
 
--
+- Δημιουργία component που εμφανιζει όλους τους χρήστες "της βάσης του json-server"
+- Χρησιμοποιεί το `AppService` στο `ngOnInt` για να λαβει δεδομένα από "τη βάση"
+και να τα θέσει σαν τιμή του χαρακτηριστικού `users`.
 
 ## 10. CRUD users scaffolding
 
