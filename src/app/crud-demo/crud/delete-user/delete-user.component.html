@@ -1,4 +1,4 @@
-<div class="d-felx flex-column gap-2">
+<!-- <div class="d-felx flex-column gap-2">
   <div class="form-group">
     <label class="form-label">
       Search for User Id
@@ -11,4 +11,14 @@
       Delete
     </button>
   </div>
+</div> -->
+
+<div class="d-flex flex-column gap-2">
+  <app-crud-user-search (userFound)="onUserFound($event)">
+  </app-crud-user-search>
+
+  <div *ngIf="foundUser" class="d-flex flex-column gap-2">
+    <app-person-card [person]="foundUser"></app-person-card>
+    <app-danger-are-you-sure (confirmed)="onConfirm($event)"></app-danger-are-you-sure>
   </div>
+</div>
