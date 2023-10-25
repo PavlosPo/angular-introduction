@@ -27,7 +27,7 @@ export class DeleteUserComponent {
     }
 
   onClick() {
-    // const id = this.userIdInput.nativeElement.value;
+    const id = this.userIdInput.nativeElement.value;
     // this.appService.deleteUser(parseInt(id)).subscribe({
     //   next: (user) => {
     //     console.log(user); 
